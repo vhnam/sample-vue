@@ -6,8 +6,8 @@
         <v-list-item
           v-for="playlist in playlists"
           :key="playlist.text"
-          link
           :to="{path: playlist.path}"
+          link
         >
           <v-list-item-content>
             <v-list-item-title>{{ playlist.text }}</v-list-item-title>
@@ -27,7 +27,12 @@
           <v-btn outlined dark v-bind="attrs" v-on="on">{{ $t("common.languages") }}</v-btn>
         </template>
         <v-list>
-          <v-list-item v-for="language in languages" :key="language.value" :value="language.value">
+          <v-list-item
+            v-for="language in languages"
+            :key="language.value"
+            :value="language.value"
+            @click="dispatchSetLanguage(language.value)"
+          >
             <v-list-item-title>{{ language.text }}</v-list-item-title>
           </v-list-item>
         </v-list>
@@ -42,7 +47,13 @@
 
 <script>
 export default {
+  methods: {
+    dispatchSetLanguage(value) {
+      this.$store.dispatch('setLanguage', value);
+    },
+  },
   data: () => ({
+    currentLang: null,
     languages: [
       {
         text: 'English',

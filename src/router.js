@@ -5,7 +5,13 @@ import Playlist from './scenes/Playlist';
 
 Vue.use(VueRouter);
 
-const routes = [{path: '/playlists/:name', props: true, component: Playlist}];
+const routes = [
+  {
+    name: 'Playlist',
+    path: '/playlists/:name',
+    component: Playlist,
+  },
+];
 
 const router = new VueRouter({
   mode: 'history',
