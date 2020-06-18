@@ -6,6 +6,10 @@
   },
   "playlist": {
     "title": "Danh sách phát",
-    "songs": "bài hát"
+    "songs": "bài hát",
+    "colTitle": "Bài hát",
+    "colArtist": "Nghệ sĩ",
+    "colAlbum": "Tuyển tập",
+    "colDuration": "Thời lượng"
   }
 }

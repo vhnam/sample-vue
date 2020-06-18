@@ -3,10 +3,10 @@
     <template v-slot:default>
       <thead>
         <tr>
-          <th class="text-left">Title</th>
-          <th class="text-left">Artist</th>
-          <th class="text-left">Album</th>
-          <th class="text-right">Duration</th>
+          <th class="text-left">{{ $t("playlist.colTitle") }}</th>
+          <th class="text-left">{{ $t("playlist.colArtist") }}</th>
+          <th class="text-left">{{ $t("playlist.colAlbum") }}</th>
+          <th class="text-right">{{ $t("playlist.colDuration") }}</th>
         </tr>
       </thead>
       <tbody>

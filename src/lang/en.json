@@ -6,6 +6,10 @@
   },
   "playlist": {
     "title": "Playlist",
-    "songs": "songs"
+    "songs": "songs",
+    "colTitle": "Title",
+    "colArtist": "Artist",
+    "colAlbum": "Album",
+    "colDuration": "Duration"
   }
 }
