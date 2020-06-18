@@ -2,6 +2,9 @@ const config = {
   common: {
     lang: 'vi',
   },
+  app: {
+    homepage: '/',
+  },
   apis: {
     getPlaylists: {
       method: 'GET',
