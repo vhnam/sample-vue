@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
+import config from './config';
+
 import Playlist from './scenes/Playlist';
 
 Vue.use(VueRouter);
@@ -8,7 +10,7 @@ Vue.use(VueRouter);
 const routes = [
   {
     name: 'Playlist',
-    path: '/playlists/:name/:id',
+    path: config.app.playlist,
     component: Playlist,
     props: true,
   },
