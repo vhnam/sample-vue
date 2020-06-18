@@ -3,5 +3,9 @@
     "app": "Trung tâm Vincent",
     "playlists": "Danh sách phát",
     "languages": "Ngôn ngữ"
+  },
+  "playlist": {
+    "title": "Danh sách phát",
+    "songs": "bài hát"
   }
 }

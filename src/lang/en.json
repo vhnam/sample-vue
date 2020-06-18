@@ -3,5 +3,9 @@
     "app": "Vincent Entertainment",
     "playlists": "Playlists",
     "languages": "Language"
+  },
+  "playlist": {
+    "title": "Playlist",
+    "songs": "songs"
   }
 }
