@@ -7,6 +7,7 @@ const actions = {
 };
 
 const moduleLanguages = {
+  namespaced: true,
   actions,
 };
 

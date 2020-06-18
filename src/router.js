@@ -8,8 +8,9 @@ Vue.use(VueRouter);
 const routes = [
   {
     name: 'Playlist',
-    path: '/playlists/:name',
+    path: '/playlists/:name/:id',
     component: Playlist,
+    props: true,
   },
 ];
 

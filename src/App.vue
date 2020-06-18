@@ -1,19 +1,7 @@
 <template>
   <v-app id="inspire">
     <v-navigation-drawer app clipped>
-      <v-subheader class="mt-4 grey--text text--darken-1">{{ $t("common.playlists") }}</v-subheader>
-      <v-list dense>
-        <v-list-item
-          v-for="playlist in playlists"
-          :key="playlist.text"
-          :to="{path: playlist.path}"
-          link
-        >
-          <v-list-item-content>
-            <v-list-item-title>{{ playlist.text }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
+      <Playlists v-bind:items="playlists"></Playlists>
     </v-navigation-drawer>
 
     <v-app-bar app clipped-left color="red" dense>
@@ -46,10 +34,19 @@
 </template>
 
 <script>
+
+
+import Playlists from './components/Playlists';
+
 export default {
+  computed: {
+    playlists() {
+      return this.$store.state.playlists.items;
+    },
+  },
   methods: {
     dispatchSetLanguage(value) {
-      this.$store.dispatch('setLanguage', value);
+      this.$store.dispatch('languages/setLanguage', value);
     },
   },
   data: () => ({
@@ -64,39 +61,13 @@ export default {
         value: 'vi',
       },
     ],
-    playlists: [
-      {
-        path: '/playlists/bolero',
-        text: 'Bolero',
-      },
-      {
-        path: '/playlists/chinese',
-        text: 'Chinese',
-      },
-      {
-        path: '/playlists/french',
-        text: 'French',
-      },
-      {
-        path: '/playlists/instrumental-music',
-        text: 'Instrumental Music',
-      },
-      {
-        path: '/playlists/english',
-        text: 'English',
-      },
-      {
-        path: '/playlists/vietnamese',
-        text: 'Vietnamese',
-      },
-      {
-        path: '/playlists/others',
-        text: 'Others',
-      },
-    ],
   }),
   created() {
     this.$vuetify.theme.dark = true;
+    this.$store.dispatch('playlists/getPlaylists');
+  },
+  components: {
+    Playlists,
   },
 };
 </script>

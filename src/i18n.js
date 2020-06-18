@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import VueI18n from 'vue-i18n';
 
+import config from './config';
+
 import enLang from './lang/en.json';
 import viLang from './lang/vi.json';
 
@@ -12,7 +14,7 @@ const messages = {
 };
 
 const i18n = new VueI18n({
-  locale: 'vi',
+  locale: config.common.lang,
   messages,
   fallbackLocale: 'en',
 });
