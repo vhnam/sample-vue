@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-banner single-line sticky color="#121212">
+    <v-banner single-line sticky color="#121212" class="banner">
       <section class="overview">
         <div v-if="playlistOverview">
           <div class="d-flex">
@@ -16,7 +16,7 @@
         </div>
         <div v-else>
           <div class="d-flex">
-            <v-skeleton-loader width="200" type="image"></v-skeleton-loader>
+            <v-skeleton-loader width="110" height="110" type="image"></v-skeleton-loader>
             <div class="d-flex flex-column justify-end">
               <div class="pl-3">
                 <v-responsive width="500">
@@ -86,5 +86,8 @@ export default {
 <style scoped>
 .overview {
   padding-top: 48px;
+}
+.banner {
+  margin-left: -24px;
 }
 </style>
